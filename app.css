@@ -1,0 +1,111 @@
+      p {
+        visibility: hidden;
+      }
+
+      a {
+        background-color: transparent;
+      }
+
+      a:active, a:hover {
+        outline: 0;
+      }
+
+      div {
+        background-color: white;
+      }
+
+      .appear {
+        animation-name: fadeIn;
+        animation-duration: 2s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0.0;
+        }
+        to {
+          opacity: 1.0;
+        }
+      }
+
+      .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      html {
+        font-family: sans-serif;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      h1 {
+        margin: .67em 0;
+        font-size: 2em;
+      }
+
+      .btn-primary {
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.3333333;
+        border-radius: 6px;
+      }
+
+      .btn-primary:focus, .btn-primary.focus {
+        color: #fff;
+        background-color: #286090;
+        border-color: #122b40;
+      }
+
+      .btn-primary:hover {
+        color: #fff;
+        background-color: #286090;
+        border-color: #204d74;
+        cursor: pointer;
+      }
+
+      table.comicGreen {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        border: 2px solid #4F7849;
+        background-color: #EEEEEE;
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+      }
+
+      table.comicGreen td, table.comicGreen th {
+        border: 1px solid #4F7849;
+        padding: 1px 1px;
+      }
+
+      table.comicGreen tbody td {
+        font-size: 19px;
+        font-weight: bold;
+        color: #4F7849;
+      }
+
+      table.comicGreen tr:nth-child(even) {
+        background: #CEE0CC;
+      }
+
+      .alert-success {
+        color: #3c763d;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+      }
+
+      .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+      }

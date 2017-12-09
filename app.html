@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Node PG test</title>
+  <link rel="stylesheet" href="app.css" type="text/css">
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="page-header"> Get a random joke</h2>
+    <button id="jokeBtn" class="btn-primary btn-lg active">Get one joke</button>
+    <br>
+    <br>
+    <table id="oneJoke" class="comicGreen">
+      <tr>
+        <th>Type</th>
+        <th>Setup</th>
+        <th>Punchline</th>
+        <th>Save Button</th>
+      </tr>
+    </table>
+    <p id="oneP" class="alert alert-success">joke <strong> saved </strong> to local storage</p>
+
+    <h2 class="page-header">Get 10 random jokes</h2>
+    <button id="tenJokeBtn" class="btn-primary btn-lg active">Get ten jokes</button>
+    <br>
+    <br>
+    <table id="tenJokes" class="comicGreen">
+      <tr>
+        <th>Type</th>
+        <th>Setup</th>
+        <th>Punchline</th>
+        <th>Save Button</th>
+      </tr>
+    </table>
+    <p id="tenP" class="alert alert-success">joke <strong> saved </strong> to local storage</p>
+    <br>
+
+    <h1 class="heading"> Add a joke to local storage</h1>
+
+      Catagory<br>
+      <input type="text" id="addType"><br>
+      Setup<br>
+      <textarea rows="4" cols="50" id="addSetup"></textarea><br>
+      Punchline<br>
+      <textarea rows="4" cols="50" id="addPunchline"></textarea><br><br>
+      <button class="btn-primary btn-lg" id="addJokeBtn">Add joke</button><br><br>
+<p id="addP" class="alert alert-success">joke <strong>added</strong> successfully!</p>
+
+    <h1>View jokes in local storage </h1>
+    <button class="btn-primary btn-lg" id="viewJokesBtn">view</button><br><br>
+    <table id="tableDB" class="comicGreen">
+      <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Setup</th>
+        <th>Punchline</th>
+      </tr>
+    </table><br>
+    <h1> Remove a joke from local storage</h1>
+    <input type="number" step="1.0" id="removeNum"><br><br>
+    <button class="btn-primary bt-lg" id="removeBtn">Remove</button>
+    <p id="removeP" class="alert alert-success">joke <strong> removed </strong> successfully</p>
+    
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
