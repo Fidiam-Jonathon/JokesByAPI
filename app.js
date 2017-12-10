@@ -79,7 +79,7 @@ function insertJoke(table, joke) {
   cell3.classList.add("appear");
 
   let jokeButton = document.getElementById("oneJokeBtn");
-  jokeButton.addEventListener("touchstart touchend click", (evt) => {
+  jokeButton.addEventListener("touchend", (evt) => {
     // TODO
     // save to local storage
     var saveJoke = {
