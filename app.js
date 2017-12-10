@@ -6,7 +6,7 @@ var btn = document.getElementById("jokeBtn");
 var tenJokes;
 var jokes;
 var xhr = new XMLHttpRequest();
-btn.addEventListener("touchstart touchend click", () => {
+btn.addEventListener("touchend", () => {
   xhr.open("GET", "https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke");
   xhr.onload = loadJoke;
   xhr.send();
@@ -14,7 +14,7 @@ btn.addEventListener("touchstart touchend click", () => {
 
 
 let putBtn = document.getElementById("tenJokeBtn");
-putBtn.addEventListener("touchstart touchend click", () => {
+putBtn.addEventListener("touchend", () => {
 
   xhr.open('GET', 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_ten');
   xhr.onload = loadTenJokes;
@@ -128,7 +128,7 @@ function insertJokes(table, jokes) {
  ********************************************************************/
 function setupListeners(jokes) {
   var listener = document.getElementById("tenJokes");
-  listener.addEventListener("touchstart touchend click", (evt) => {
+  listener.addEventListener("touchend", (evt) => {
     // current target is the target that has the eventListenver attached to it
     // evt.target is the actual child element that fired the event
     if (evt.target != evt.currentTarget) {
@@ -186,7 +186,7 @@ function showP(event) {
  * eventListener for viewing jokes
  ************************************/
 var viewJokes = document.getElementById('viewJokesBtn');
-viewJokes.addEventListener('touchstart touchend click', () => {
+viewJokes.addEventListener('touchend', () => {
   jokes = getFromLS();
   console.log("from event listener: ", jokes);
   var table = document.getElementById("tableDB");
@@ -241,7 +241,7 @@ function populateTable(jokes, table){
 
 // setup event listener for removal of jokes
 var removeBtn = document.getElementById("removeBtn");
-removeBtn.addEventListener("touchstart touchend click", (evt)=>{
+removeBtn.addEventListener("touchend", (evt)=>{
   var removeID = document.getElementById("removeNum").value;
   var key = "joke" + removeID;
   console.log(key);
@@ -251,7 +251,7 @@ removeBtn.addEventListener("touchstart touchend click", (evt)=>{
 
 // add event listener for adding jokes to LS
 var addJokeBtn = document.getElementById("addJokeBtn");
-addJokeBtn.addEventListener("touchstart touchend click", (evt)=>{
+addJokeBtn.addEventListener("touchend", (evt)=>{
   var id = getRandomInt(100, 1000);
   var type = document.getElementById("addType").value;
   var setup = document.getElementById("addSetup").value;
