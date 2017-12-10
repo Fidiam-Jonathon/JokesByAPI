@@ -53,7 +53,7 @@ var btn = document.getElementById("jokeBtn");
 var tenJokes;
 var jokes;
 var xhr = new XMLHttpRequest();
-btn.addEventListener("click", () => {
+btn.addEventListener("touchend", () => {
   xhr.open("GET", "https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke");
   xhr.onload = loadJoke;
   xhr.send();
@@ -61,7 +61,7 @@ btn.addEventListener("click", () => {
 
 
 let putBtn = document.getElementById("tenJokeBtn");
-putBtn.addEventListener("click", () => {
+putBtn.addEventListener("touchend", () => {
 
   xhr.open('GET', 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_ten');
   xhr.onload = loadTenJokes;
@@ -126,7 +126,7 @@ function insertJoke(table, joke) {
   cell3.classList.add("appear");
 
   let jokeButton = document.getElementById("oneJokeBtn");
-  jokeButton.addEventListener("touchstart click click", (evt) => {
+  jokeButton.addEventListener("touchstart touchend touchend", (evt) => {
     // TODO
     // save to local storage
     var saveJoke = {
@@ -175,19 +175,19 @@ function insertJokes(table, jokes) {
  ********************************************************************/
 function setupListeners(jokes) {
   var listener = document.getElementById("tenJokes");
-  listener.addEventListener("click", (evt) => {
+  listener.addEventListener("touchend", (evt) => {
     // current target is the target that has the eventListenver attached to it
     // evt.target is the actual child element that fired the event
     if (evt.target != evt.currentTarget) {
-      var clicked = evt.target.id;
-      console.log("clicked: ", clicked);
+      var touchended = evt.target.id;
+      console.log("touchended: ", touchended);
       // TODO
       // save to local storage
       let joke = {
-        id: jokes[clicked -1].id,
-        type: jokes[clicked -1].type,
-        setup: jokes[clicked -1].setup,
-        punchline: jokes[clicked -1].punchline
+        id: jokes[touchended -1].id,
+        type: jokes[touchended -1].type,
+        setup: jokes[touchended -1].setup,
+        punchline: jokes[touchended -1].punchline
       }
       console.log(joke);
       var saveJokes = JSON.stringify(joke);
@@ -233,7 +233,7 @@ function showP(event) {
  * eventListener for viewing jokes
  ************************************/
 var viewJokes = document.getElementById('viewJokesBtn');
-viewJokes.addEventListener('click', () => {
+viewJokes.addEventListener('touchend', () => {
   jokes = getFromLS();
   console.log("from event listener: ", jokes);
   var table = document.getElementById("tableDB");
@@ -288,7 +288,7 @@ function populateTable(jokes, table){
 
 // setup event listener for removal of jokes
 var removeBtn = document.getElementById("removeBtn");
-removeBtn.addEventListener("click", (evt)=>{
+removeBtn.addEventListener("touchend", (evt)=>{
   var removeID = document.getElementById("removeNum").value;
   var key = "joke" + removeID;
   console.log(key);
@@ -298,7 +298,7 @@ removeBtn.addEventListener("click", (evt)=>{
 
 // add event listener for adding jokes to LS
 var addJokeBtn = document.getElementById("addJokeBtn");
-addJokeBtn.addEventListener("click", (evt)=>{
+addJokeBtn.addEventListener("touchend", (evt)=>{
   var id = getRandomInt(100, 1000);
   var type = document.getElementById("addType").value;
   var setup = document.getElementById("addSetup").value;
